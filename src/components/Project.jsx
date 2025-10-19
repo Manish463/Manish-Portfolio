@@ -5,16 +5,16 @@ const Project = () => {
   const value = useContext(ThemeContext)
 
   return (
-    <div id='project' className={`min-h-screen p-8 md:p-16 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
-      <h2 className='text-3xl md:text-5xl font-bold font-[Poppins] pb-4 md:pb-8'>Projects:</h2>
-      <div className="cards w-full flex items-start justify-start flex-wrap gap-6 md:gap-8">
+    <div id='project' className={`min-h-screen p-8 pt-[12vh] md:p-16 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
+      <h2 className='text-3xl md:text-5xl font-bold font-[Poppins] pb-6 md:pb-12'>Projects:</h2>
+      <div className="cards w-full flex items-start justify-center flex-wrap gap-6 md:gap-8">
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="/images/linktree.png" alt="linktree image" />
           </div>
           <div className='px-4 py-2 h-2/5'>
-            <h3 className='text-xl font-bold flex pb-2'>
+            <h3 className='text-xl font-bold flex pb-1'>
               Linktree
               <a href="https://linktree-clone-pink.vercel.app"><img className={`top-3 right-3 w-4 ml-1 ${value.theme == 'light' ? '' : 'invert'}`} src="/icons/live.svg" alt="Live" /></a>
             </h3>
@@ -25,7 +25,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="/images/bitlink.png" alt="Bitlink image" />
           </div>
@@ -41,7 +41,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="/images/passop.png" alt="PassOP image" />
           </div>
@@ -56,7 +56,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6856658bed2d0e90428588dc/screenshot_2025-06-21-07-56-27-0000.webp&fit=cover&h=500&q=40&w=800" alt="ToDo-List image" />
           </div>
@@ -71,7 +71,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="/images/bitlink.png" alt="Bitlink image" />
           </div>
@@ -87,7 +87,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="/images/passop.png" alt="PassOP image" />
           </div>
@@ -102,7 +102,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className={`card transition-all animate-move-up w-80 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
+        <div className={`card transition-all animate-move-up w-72 h-90 border-2  rounded-2xl shadow-lg overflow-hidden ${value.theme == 'light' ? 'bg-[var(--lightCard)] border-[var(--lightBorder)] shadow-[var(--lightShadow)]' : 'bg-[var(--darkCard)] border-[var(--darkBorder)] shadow-[var(--darkShadow)]'}`}>
           <div className='h-3/5 object-cover object-center'>
             <img className='h-full' src="https://app.netlify.com/.netlify/images?url=https://d33wubrfki0l68.cloudfront.net/6856658bed2d0e90428588dc/screenshot_2025-06-21-07-56-27-0000.webp&fit=cover&h=500&q=40&w=800" alt="ToDo-List image" />
           </div>
@@ -117,7 +117,7 @@ const Project = () => {
           </div>
         </div>
 
-        <div className='w-80 h-90 flexbox'>
+        <div className='w-72 h-90 flexbox'>
           <button className='text-blue-500 font-bold'>View All Projects</button>
         </div>
       </div>

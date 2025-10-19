@@ -18,7 +18,7 @@ const Home = () => {
           <a href="/" className='px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] hover:bg-[var(--secColor)]'>Contact</a>
         </div>
       </div>
-      <div className='flexbox p-6'>
+      <div className='flexbox p-6 pb-14'>
         <video className='rounded-2xl' src="/videos/Developer activity.mp4" autoPlay muted playsInline></video>
       </div>
     </div>

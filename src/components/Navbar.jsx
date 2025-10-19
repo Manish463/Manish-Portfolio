@@ -46,19 +46,19 @@ const Navbar = () => {
             <img className={`w-[28px] ${value.theme == 'dark' ? 'invert' : ''}`} src="/icons/cross.svg" alt="X" />
           </button>
           <Link smooth={true} duration={1000} to="home" onClick={() => setShowSideBar(!showSideBar)} className="no-underline w-full">
-            <li className='w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--secColor)]'>Home</li>
+            <li className={`w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] ${value.theme == 'light' ? 'hover:text-[var(--darkText)]' : 'hover:text-[var(--lightText)]'}`}>Home</li>
           </Link>
           <Link smooth={true} duration={1000} to="about" onClick={() => setShowSideBar(!showSideBar)} className="no-underline w-full">
-            <li className='w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--secColor)]'>About Me</li>
+            <li className={`w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] ${value.theme == 'light' ? 'hover:text-[var(--darkText)]' : 'hover:text-[var(--lightText)]'}`}>About Me</li>
           </Link>
           <Link smooth={true} duration={1000} to="skill" onClick={() => setShowSideBar(!showSideBar)} className="no-underline w-full">
-            <li className='w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--secColor)]'>Skill</li>
+            <li className={`w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] ${value.theme == 'light' ? 'hover:text-[var(--darkText)]' : 'hover:text-[var(--lightText)]'}`}>Skill</li>
           </Link>
           <Link smooth={true} duration={1000} to="project" onClick={() => setShowSideBar(!showSideBar)} className="no-underline w-full">
-            <li className='w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--secColor)]'>Project</li>
+            <li className={`w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] ${value.theme == 'light' ? 'hover:text-[var(--darkText)]' : 'hover:text-[var(--lightText)]'}`}>Project</li>
           </Link>
           <Link smooth={true} duration={1000} to="contact" onClick={() => setShowSideBar(!showSideBar)} className="no-underline w-full">
-            <li className='w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] hover:text-[var(--secColor)]'>Contact</li>
+            <li className={`w-full border-[1px] border-slate-500 text-center py-2 rounded-md cursor-pointer font-semibold text-lg hover:bg-[var(--accent)] ${value.theme == 'light' ? 'hover:text-[var(--darkText)]' : 'hover:text-[var(--lightText)]'}`}>Contact</li>
           </Link>
         </ul>
 
