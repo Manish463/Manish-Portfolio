@@ -1,77 +1,148 @@
 @import "tailwindcss";
 
 :root {
-    --primColor: #0046FF;
-    --secColor: #73C8D2;
-    --accent: #F5F1DC;
-    --lightBg: white;
-    --darkBg: #0F172A;
+    --primColor: #2563EB;
+    --secColor: #3B82F6;
+    --accent: #60A5FA;
+
+    --lightBg: #FFFFFF;
     --lightText: #111827;
+    --lightCard: #F8FAFC;
+    --lightBorder: rgba(0, 0, 0, 0.1);
+    --lightShadow: 0 0 16px rgba(37, 99, 235, 0.25);
+
+    --darkBg: #0F172A;
     --darkText: #F8FAFC;
+    --darkCard: #1E293B;
+    --darkBorder: rgba(255, 255, 255, 0.1);
+    --darkShadow: 0 0 16px rgba(255, 255, 255, 0.486);
+
+    --lightSecBg: #F8FAFC;
+    --darkSecBg: #1E293B;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
 /* apply directives */
-.gridbox{
+.gridbox {
     @apply grid grid-rows-2 md:grid-cols-2 md:grid-rows-1;
 }
+
 .flexbox {
     @apply flex justify-center items-center;
 }
+
 .vflexbox {
     @apply flex flex-col justify-center items-center;
 }
 
 /* anmations */
 @keyframes fade-lr {
-    0%{
+    0% {
         transform: translateY(-250px);
         opacity: 0;
-    } 100% {
+    }
+
+    100% {
         transform: translateY(0px);
         opacity: 1;
     }
 }
+
 @keyframes fade-in {
     from {
         transform: translateY(20px);
         opacity: 0;
-    } to {
+    }
+
+    to {
         transform: translateY(0px);
         opacity: 1;
     }
 }
+
 @keyframes move-up {
     from {
         transform: translateY(0px);
-    } to {
+    }
+
+    to {
         transform: translateY(-10px);
     }
 }
+
 @keyframes scale {
     from {
         transform: scale(1);
-    } to {
+    }
+
+    to {
         transform: scale(1.05);
     }
 }
 
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(4px);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(4px);
+        opacity: 0.8;
+    }
+}
+
 /* animation class */
-.afade-lr{
+.afade-lr {
     animation: fade-lr 2s cubic-bezier(0.075, 0.82, 0.165, 1) 1 forwards;
 }
-.animate-fade-in{
+
+.animate-fade-in {
     animation: fade-in 1s ease forwards;
 }
+
 .animate-move-up:hover {
     animation: move-up 1s ease forwards;
 }
+
 .animate-scale:hover {
     animation: scale 0.5s ease-in-out forwards;
 }
-.delay-200 { animation-delay: 0.2s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-600 { animation-delay: 0.6s; }
+
+.animate-appear {
+    animation: appear 1s ease-in-out forwards;
+}
+
+.animate-floatUp {
+    animation: floatUp 3s ease-in-out infinite;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}

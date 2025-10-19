@@ -6,7 +6,7 @@ const Contact = () => {
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
         Let's work together
       </h2>
-      <p className="text-blue-100 mb-6">
+      <p className="text-blue-100 mb-6 text-sm md:text-md">
         I'm open to internships, freelance projects, or collaborations.
       </p>
       <div className="flex justify-center gap-4">
@@ -15,10 +15,10 @@ const Contact = () => {
         </a>
         <div className='flexbox gap-4'>
           <a href="https://github.com/Manish463" target="_blank" className='animate-scale'>
-            <img className='w-12 invert' src="/github.svg" alt="GitHub" />
+            <img className='w-12 invert' src="/icons/github.svg" alt="GitHub" />
           </a>
           <a href="https://linkedin.com/in/yourusername" target="_blank" className='animate-scale'>
-            <img className='w-12 invert' src="/linkedin.svg" alt="LinkedIn" />
+            <img className='w-12 invert' src="/icons/linkedin.svg" alt="LinkedIn" />
           </a>
         </div>
       </div>

@@ -10,13 +10,13 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState(null)
 
   // Detecting OS theme
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
 
-    setTheme(media ? 'data' : 'light');
+    setTheme(media.matches ? 'dark' : 'light');
     const handler = () => setTheme(media.matches ? "dark" : "light");
     media.addEventListener("change", handler);
 
