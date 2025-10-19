@@ -12,7 +12,7 @@ const About = () => {
       <div className="content vflexbox row-span-2 md:col-span-2 md:p-8">
         <div className={`p-2 md:p-6 py-6 md:py-16 rounded-2xl vflexbox gap-6 md:gap-10 animate-fade-in`}>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[Poppins] font-bold animate-fade-in">About Me</h2>
-          <p className="vflexbox text-sm md:text-lg px-[5vw] gap-2 md:gap-4 animate-fade-in">
+          <div className="vflexbox text-sm md:text-lg px-[5vw] gap-2 md:gap-4 animate-fade-in">
             <p>
               I'm Manish Kumar Sharma, a passionate Full Stack Web Developer (MERN Stack) who loves turning ideas into functional and responsive web applications.
             </p>
@@ -25,7 +25,7 @@ const About = () => {
             <p>
               Beyond coding, I enjoy exploring new frameworks, improving UI designs, and optimizing performance for a better user experience.
             </p>
-          </p>
+          </div>
         </div>
       </div>
     </div>
