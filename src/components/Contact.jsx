@@ -17,7 +17,7 @@ const Contact = () => {
           <a href="https://github.com/Manish463" target="_blank" className='animate-scale'>
             <img className='w-12 invert' src="/icons/github.svg" alt="GitHub" />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" className='animate-scale'>
+          <a href="https://linkedin.com/in/manish-kumar-sharma-97b995387" target="_blank" className='animate-scale'>
             <img className='w-12 invert' src="/icons/linkedin.svg" alt="LinkedIn" />
           </a>
         </div>
