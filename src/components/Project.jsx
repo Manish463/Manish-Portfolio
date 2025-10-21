@@ -5,7 +5,7 @@ const Project = () => {
   const value = useContext(ThemeContext)
 
   return (
-    <div id='project' className={`min-h-screen p-8 pt-[12vh] md:p-16 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
+    <div className={`min-h-screen p-8 pt-[12vh] md:p-16 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
       <h2 className='text-3xl md:text-5xl font-bold font-[Poppins] pb-6 md:pb-12'>Projects:</h2>
       <div className="cards w-full flex items-start justify-center flex-wrap gap-6 md:gap-8">
 

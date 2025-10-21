@@ -5,7 +5,7 @@ const Skill = () => {
     const value = useContext(ThemeContext)
 
     return (
-        <div id="skill" className='w-full min-h-screen vflexbox p-6 md:p-14'>
+        <div className='w-full min-h-screen vflexbox p-6 md:p-14'>
             <h2 className='text-3xl md:text-5xl font-bold font-[Poppins] pb-4 md:pb-6'>Skills</h2>
             <div className="skills vflexbox w-full gap-2 md:gap-4">
                 <div className="frontend w-full">

@@ -5,7 +5,7 @@ const About = () => {
   const value = useContext(ThemeContext)
 
   return (
-    <div id='about' className={`min-h-screen w-full grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 p-6 py-14 md:p-12 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
+    <div className={`min-h-screen w-full grid grid-rows-3 md:grid-cols-3 md:grid-rows-1 p-6 py-14 md:p-12 ${value.theme == 'light' ? 'bg-[var(--lightSecBg)]' : 'bg-[var(--darkSecBg)]'}`}>
       <div className="image flexbox w-full">
         <img className={`w-[50%] rounded-full animate-appear ${value.theme == 'light' ? 'shadow-[var(--lightShadow)]' : 'shadow-[var(--darkShadow)]'}`} src="/images/image.jpg" alt="developer-boy" />
       </div>

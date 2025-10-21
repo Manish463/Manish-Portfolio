@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <div id='home' className='min-h-screen gridbox'>
+    <div className='min-h-screen gridbox'>
 
       <div className='vflexbox !items-start p-8 md:px-30'>
         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-[Poppins] font-bold animate-fade-in pb-2'>
