@@ -12,7 +12,6 @@ const Navbar = (props) => {
   const [showSideBar, setShowSideBar] = useState(false);
   const menu = useRef(null);
 
-  // const linkTags = useRef(null)
   // Useeffect hooks
   useEffect(() => {
     setMode(theme == "light" ? "/moon.svg" : "/sun.svg");
@@ -47,7 +46,7 @@ const Navbar = (props) => {
 
           {/* Close button (mobile only) */}
           <button className="absolute top-5 right-5 md:hidden" onClick={() => setShowSideBar(!showSideBar)}>
-            <img className={`w-[28px] ${theme === "dark" ? "invert" : ""}`} src="/icons/cross.svg" alt="X" />
+            <img className={`w-[0px] appear ${theme === "dark" ? "invert" : ""}`} src="/icons/cross.svg" alt="X" />
           </button>
 
           {[

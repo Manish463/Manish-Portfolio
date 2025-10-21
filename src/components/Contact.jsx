@@ -10,7 +10,7 @@ const Contact = () => {
         I'm open to internships, freelance projects, or collaborations.
       </p>
       <div className="flex justify-center gap-4">
-        <a href="mailto:yourname@gmail.com" className="bg-white text-blue-600 font-semibold px-5 py-3 rounded-lg hover:bg-blue-100">
+        <a href="mailto:ms8114361@gmail.com" className="bg-white text-blue-600 font-semibold px-5 py-3 rounded-lg hover:bg-blue-100">
           Contact Me
         </a>
         <div className='flexbox gap-4'>

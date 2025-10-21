@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* color schema */
 :root {
     --primColor: #2563EB;
     --secColor: #3B82F6;
@@ -54,7 +55,6 @@
 @keyframes fade-in {
     from {
         transform: translateY(20px);
-        opacity: 0;
     }
 
     to {
@@ -80,16 +80,6 @@
 
     to {
         transform: scale(1.05);
-    }
-}
-
-@keyframes appear {
-    from {
-        transform: scale(0);
-    }
-
-    to {
-        transform: scale(1);
     }
 }
 

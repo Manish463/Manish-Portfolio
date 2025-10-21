@@ -10,9 +10,11 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  // Declaring states/hooks
   const [theme, setTheme] = useState(null)
   const [activeSection, setActiveSection] = useState('home')
 
+  // Intersection observer API
   const sections = {
     home: useRef(null),
     about: useRef(null),
@@ -37,6 +39,7 @@ function App() {
     return () => observer.disconnect();
   }, [])
 
+  
   // Detecting OS theme
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
@@ -54,9 +57,9 @@ function App() {
 
         <Navbar active={{activeSection, setActiveSection}} />
         <section ref={sections.home} id='home'><Home /></section>
-        <section ref={sections.about} id='about'><About /></section>
+        <section ref={sections.about} id='about'><About active={{activeSection, setActiveSection}} /></section>
         <section ref={sections.skill} id='skill'><Skill /></section>
-        <section ref={sections.project} id='project'><Project /></section>
+        <section ref={sections.project} id='project'><Project active={{activeSection, setActiveSection}} /></section>
         <section ref={sections.contact} id='contact'><Contact /></section>
         <Footer />
 
