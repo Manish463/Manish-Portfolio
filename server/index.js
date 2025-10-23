@@ -43,41 +43,44 @@ app.post('/contact', async (req, res) => {
             from: EMAIL,
             to: EMAIL,
             subject: `Portfolio Contact from ${first_name}`,
-            text: `
-        Name: ${first_name + last_name}
-        Email: ${email}
-        Message: ${message}
-      `,
+            html: `
+              <div style="font-family: Arial, Helvetica, sans-serif; color:#111;">
+                <h2 style="font-size:20px; margin:0 0 8px 0;">New Contact Message</h2>
+                <p style="font-size:16px; margin:4px 0;"><strong>Name:</strong> ${first_name} ${last_name}</p>
+                <p style="font-size:16px; margin:4px 0;"><strong>Email:</strong> ${email}</p>
+                <p style="font-size:16px; margin:8px 0 0 0;"><strong>Message:</strong></p>
+                <p style="font-size:15px; line-height:1.4; background:#f7f7f7; padding:8px; border-radius:4px;">${message}</p>
+              </div>
+            `
         });
 
         res.status(200).json({ success: true, message: "Email sent successfully!", info });
     } catch (error) {
-        console.log(error)
         res.status(500).json({ error: "Failed to send email" });
     }
 })
 
 // project route
-app.post('/project', upload.single("image"), async (req, res) => { 
-    const {title, link, content} = req.body
+app.post('/project', upload.single("image"), async (req, res) => {
+    const { title, link, content } = req.body
     const image = req.file.filename
-    
-    if(content.length > 180) {
-        res.status(500).json({success: false, error: true, message: "Content should be under 180 character."})
+
+    if (content.length > 180) {
+        res.status(500).json({ success: false, error: true, message: "Content should be under 180 character." })
     }
 
     try {
-        const project = await projectModel.findOne({title});
+        const project = await projectModel.findOne({ title });
 
-        if(false) {
-            res.status(500).json({success: false, error: true, message: "This project already exixt."})
+        if (false) {
+            res.status(500).json({ success: false, error: true, message: "This project already exixt." })
         } else {
-            const data = await projectModel.create({title, link, content, image})
+            const data = await projectModel.create({ title, link, content, image })
             // console.log(data)
-            res.status(200).json({success: true, error: false, message: "The data is loaded"})
+            res.status(200).json({ success: true, error: false, message: "The data is loaded" })
         }
     } catch (error) {
-        res.status(500).json({success: false, error: true, message: error.message})
+        res.status(500).json({ success: false, error: true, message: error.message })
     }
 })
 
@@ -86,7 +89,7 @@ app.get('/project', async (req, res) => {
         const projects = await projectModel.find()
         res.status(200).send(projects)
     } catch (error) {
-        res.status(500).json({success: false, error: true, message: error.message})
+        res.status(500).json({ success: false, error: true, message: error.message })
     }
 })
 
