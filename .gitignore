@@ -26,3 +26,5 @@ dist-ssr
 
 # My files
 Notes.md
+./server/.env
+./client/.env
