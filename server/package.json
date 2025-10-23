@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "description": "This server handles my all request of my client side of the portfolio",
+  "license": "ISC",
+  "author": "Manish",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.9"
+  }
+}
