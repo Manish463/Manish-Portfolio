@@ -6,7 +6,12 @@ import cors from 'cors'
 import upload from './config/multerconfig.js' // importing multer image uploading function
 import projectModel from './model/project-model.js'
 import connection from './config/mongoose-connection.js'
+import path from 'path'
+// to use __dirname in ecmascript we have to add this three line of code
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 // initializing variables
 const app = express()
 const port = process.env.PORT
@@ -17,6 +22,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 // declaring middlewares
 app.use(express.json())
 app.use(cors())
+app.use(express.static(path.join(__dirname, 'public')))
 
 // handling different routes
 // home route
@@ -66,19 +72,12 @@ app.post('/project', upload.single("image"), async (req, res) => {
     const image = req.file.filename
 
     if (content.length > 180) {
-        res.status(500).json({ success: false, error: true, message: "Content should be under 180 character." })
+        return res.status(500).json({ success: false, error: true, message: "Content should be under 180 character." })
     }
 
     try {
-        const project = await projectModel.findOne({ title });
-
-        if (false) {
-            res.status(500).json({ success: false, error: true, message: "This project already exixt." })
-        } else {
-            const data = await projectModel.create({ title, link, content, image })
-            // console.log(data)
-            res.status(200).json({ success: true, error: false, message: "The data is loaded" })
-        }
+        const data = await projectModel.create({ title, link, content, image })
+        res.status(200).json({ success: true, error: false, message: "The data is loaded" })
     } catch (error) {
         res.status(500).json({ success: false, error: true, message: error.message })
     }
@@ -87,7 +86,7 @@ app.post('/project', upload.single("image"), async (req, res) => {
 app.get('/project', async (req, res) => {
     try {
         const projects = await projectModel.find()
-        res.status(200).send(projects)
+        res.status(200).json(projects)
     } catch (error) {
         res.status(500).json({ success: false, error: true, message: error.message })
     }
