@@ -45,8 +45,8 @@ const Navbar = (props) => {
         <ul ref={menu} className={` ${showSideBar ? "flex afade-lr" : "hidden"} md:flex z-20 h-[100vh] md:h-auto w-[100vw] md:w-auto absolute md:static flex-col md:flex-row justify-start md:justify-center items-center pt-20 md:pt-0 top-0 left-0 backdrop-blur-sm md:backdrop-blur-0 p-10 md:p-0 gap-5 md:gap-6`}>
 
           {/* Close button (mobile only) */}
-          <button className="absolute top-5 right-5 md:hidden" onClick={() => setShowSideBar(!showSideBar)}>
-            <img className={`w-[0px] appear ${theme === "dark" ? "invert" : ""}`} src="/icons/cross.svg" alt="X" />
+          <button className="absolute top-8 right-8 md:hidden" onClick={() => setShowSideBar(!showSideBar)}>
+            <img className={`w-[28px] appear ${theme === "dark" ? "invert" : ""}`} src="/icons/cross.svg" alt="X" />
           </button>
 
           {[

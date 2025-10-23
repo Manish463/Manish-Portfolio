@@ -16,7 +16,7 @@ const Skill = () => {
                         <img className={`w-12 md:w-20 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=react" alt='react' />
                         <img className={`w-12 md:w-20 delay-400 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=tailwind" alt='tailwind' />
                         <img className={`w-12 md:w-20 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=redux" alt='redux' />
-                        <img className={`w-12 md:w-20 delay-200 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=next" alt='next' />
+                        {/* <img className={`w-12 md:w-20 delay-200 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=next" alt='next' /> */}
                     </div>
                 </div>
                 <div className='w-4/5 md:w-3/5 bg-gray-400/30 h-[2px]'></div>
@@ -24,7 +24,7 @@ const Skill = () => {
                     <div className="logos md:px-8 py-4 flexbox flex-wrap gap-4 gap-y-6 sm:gap-4 lg:gap-8">
                         <img className={`w-12 md:w-20 delay-200 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=nodejs" alt='nodejs' />
                         <img className={`w-12 md:w-20 delay-400 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=express" alt='express' />
-                        <img className={`w-12 md:w-20 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=next" alt='next' />
+                        {/* <img className={`w-12 md:w-20 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=next" alt='next' /> */}
                         <img className={`w-12 md:w-20 delay-200 rounded-xl animate-scale transition-transform animate-floatUp`} src="https://skillicons.dev/icons?i=mongodb" alt='mongodb' />
                     </div>
                 </div>

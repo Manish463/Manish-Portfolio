@@ -39,6 +39,10 @@
     @apply flex flex-col justify-center items-center;
 }
 
+.inp-class {
+    @apply bg-white px-5 py-2 w-full mb-2 rounded-md outline-offset-2 focus:outline-2 focus:outline-white;
+}
+
 /* anmations */
 @keyframes fade-lr {
     0% {
