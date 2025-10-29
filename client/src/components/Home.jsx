@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll'
 
 const Home = () => {
   return (
@@ -14,8 +15,8 @@ const Home = () => {
           I'm a MERN Stack Developer focused on building responsive and dynamic web apps that deliver great user experiences.
         </p>
         <div className="btns mt-2 flex gap-6 md:gap-8 animate-fade-in opacity-0 delay-300">
-          <a href="/resume.pdf" className='px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] hover:bg-[var(--secColor)]'>Download Resuma</a>
-          <a href='mailto:ms8114361@gmail.com' className='px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] hover:bg-[var(--secColor)]'>Contact</a>
+          <a href="/resume.pdf" className='px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] hover:bg-[var(--secColor)] cursor-pointer'>Download Resuma</a>
+          <Link to='contact' smooth={true} duration={1000} className='px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] hover:bg-[var(--secColor)] cursor-pointer'>Contact</Link>
         </div>
       </div>
       <div className='flexbox p-6 pb-14'>

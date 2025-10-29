@@ -47,7 +47,7 @@ const Contact = () => {
         <h2 className="text-3xl md:text-5xl font-bold">
           Contact Me
         </h2>
-        <form onSubmit={handleSubmit(onSubmit)} className='vflexbox gap-5 text-black w-[90%] md:w-[70%] p-6'>
+        <form onSubmit={handleSubmit(onSubmit)} className='vflexbox gap-2 md:gap-5 text-black w-[90%] md:w-[70%] p-6'>
           <div className='w-full'>
             <input {...register("first_name", { required: { value: true, message: "Please enter the first name" }, minLength: { value: 3, message: 'Name should contains at least 3 charactors' } })} type="text" placeholder='First Name' className='inp-class' />
             {errors.first_name && <span className='pl-2 font-semibold text-red-500 text-sm bg-white px-4 py-1 rounded-md'>{errors.first_name.message}</span>}
