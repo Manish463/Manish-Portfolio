@@ -1,84 +1,168 @@
-import { useForm } from 'react-hook-form';
-import { ToastContainer, toast } from 'react-toastify';
-import { useState } from 'react';
-import { ThreeDot } from 'react-loading-indicators';
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import { useState } from "react";
+import { ThreeDot } from "react-loading-indicators";
 
+const LINKS = [
+  {
+    name: "GitHub",
+    icon: "/icons/github.svg",
+    link: "https://github.com/Manish463",
+  },
+  {
+    name: "LinkedIn",
+    icon: "/icons/linkedin.svg",
+    link: "https://linkedin.com/in/manish-kumar-sharma-97b995387",
+  },
+  {
+    name: "Email",
+    icon: "/icons/email.svg",
+    link: "mailto:ms8114361@gmail.com",
+  },
+];
 const Contact = () => {
-  const serverUri = import.meta.env.VITE_API_SERVER_URI
-  const [submiting, setSubmiting] = useState(false)
+  const serverUri = import.meta.env.VITE_API_SERVER_URI;
+  const [submiting, setSubmiting] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
-  } = useForm()
+    reset,
+  } = useForm();
 
   const onSubmit = async (data) => {
-    setSubmiting(true)
+    setSubmiting(true);
     try {
       const response = await fetch(`${serverUri}/contact`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'content-type': 'application/json'
+          "content-type": "application/json",
         },
         body: JSON.stringify(data),
-      })
+      });
 
-      const res = await response.json()
+      const res = await response.json();
 
       if (response.status === 200) {
-        toast.success(res.message)
+        toast.success(res.message);
       } else {
-        toast.success(res.message)
+        toast.success(res.message);
       }
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     }
 
-    reset()
-    setSubmiting(false)
-  }
+    reset();
+    setSubmiting(false);
+  };
 
   return (
-    <section className="bg-[var(--secColor)] text-white pt-20 md:pt-26 vflexbox gap-5">
+    <section className="bg-[var(--secColor)] text-white py-12 flex flex-col items-center gap-10">
       <ToastContainer />
-      <div className={`vflexbox gap-4 md:gap-6 w-full`}>
-        <h2 className="text-3xl md:text-5xl font-bold">
-          Contact Me
-        </h2>
-        <form onSubmit={handleSubmit(onSubmit)} className='vflexbox gap-2 md:gap-5 text-black w-[90%] md:w-[70%] p-6'>
-          <div className='w-full'>
-            <input {...register("first_name", { required: { value: true, message: "Please enter the first name" }, minLength: { value: 3, message: 'Name should contains at least 3 charactors' } })} type="text" placeholder='First Name' className='inp-class' />
-            {errors.first_name && <span className='pl-2 font-semibold text-red-500 text-sm bg-white px-4 py-1 rounded-md'>{errors.first_name.message}</span>}
-          </div>
-          <input  {...register("last_name")} type="text" placeholder='Last Name' className='inp-class' />
-          <div className='w-full'>
-            <input  {...register("email", { required: { value: true, message: "Please enter your email" } })} type="email" placeholder='Email' className='inp-class' />
-            {errors.email && <span className='pl-2 font-semibold text-red-500 text-sm bg-white px-4 py-1 rounded-md'>{errors.email.message}</span>}
-          </div>
-          <div className='w-full'>
-            <textarea  {...register("message", { required: { value: true, message: "Please enter your message first" } })} placeholder='Your message here....' className='inp-class resize-none h-25' spellCheck={true}></textarea>
-            {errors.message && <span className='pl-2 font-semibold text-red-500 text-sm bg-white px-4 py-1 rounded-md'>{errors.message.message}</span>}
-          </div>
-          <button className="bg-white text-blue-600 font-semibold mt-2 text-lg md:text-xl px-8 py-2 md:px-16 md:py-3 rounded-lg hover:bg-blue-100 w-full">
-            {submiting ? <ThreeDot color="#2563EB" size="medium" text="" textColor="" /> : "Submit"}
-          </button>
-        </form>
+
+      {/* Heading */}
+      <div className="text-center space-y-2">
+        <div className="flex flex-col items-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide">
+            Contact Me
+          </h2>
+          <div className="w-60 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
+        </div>
+        <p className="text-gray-200 text-sm md:text-base max-w-lg px-4">
+          Feel free to reach out for collaborations, projects, or just a
+          friendly chat.
+        </p>
       </div>
-      <div className='flexbox gap-4 w-full pb-4'>
-        <a href="https://github.com/Manish463" target="_blank" className='animate-scale'>
-          <img className='w-8 invert' src="/icons/github.svg" alt="GitHub" />
-        </a>
-        <a href="https://linkedin.com/in/manish-kumar-sharma-97b995387" target="_blank" className='animate-scale'>
-          <img className='w-8 invert' src="/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <a href="mailto:ms8114361@gmail.com" target="_blank" className='animate-scale'>
-          <img className='w-8' src="/icons/email.svg" alt="Email" />
-        </a>
+
+      {/* Form */}
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-[90%] md:w-[60%] bg-white rounded-2xl p-8 md:p-10 shadow-xl flex flex-col gap-4 text-black"
+      >
+        {/* First Name */}
+        <div className="w-full">
+          <input
+            {...register("first_name", {
+              required: { value: true, message: "Please enter the first name" },
+              minLength: {
+                value: 3,
+                message: "Name should contain at least 3 characters",
+              },
+            })}
+            type="text"
+            placeholder="First Name"
+            className="inp-class"
+          />
+          {errors.first_name && (
+            <p className="text-red-600 text-sm mt-1 font-semibold">
+              {errors.first_name.message}
+            </p>
+          )}
+        </div>
+
+        {/* Last Name */}
+        <input
+          {...register("last_name")}
+          type="text"
+          placeholder="Last Name"
+          className="inp-class"
+        />
+
+        {/* Email */}
+        <div className="w-full">
+          <input
+            {...register("email", {
+              required: { value: true, message: "Please enter your email" },
+            })}
+            type="email"
+            placeholder="Email"
+            className="inp-class"
+          />
+          {errors.email && (
+            <p className="text-red-600 text-sm mt-1 font-semibold">
+              {errors.email.message}
+            </p>
+          )}
+        </div>
+
+        {/* Message */}
+        <div className="w-full">
+          <textarea
+            {...register("message", {
+              required: { value: true, message: "Please enter your message" },
+            })}
+            placeholder="Your message..."
+            className="inp-class resize-none h-28"
+          ></textarea>
+          {errors.message && (
+            <p className="text-red-600 text-sm mt-1 font-semibold">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        {/* Submit */}
+        <button className="bg-[var(--primColor)] text-white font-semibold text-lg py-3 rounded-md transition-all duration-300 shadow-md w-full hover:scale-105 active:scale-95">
+          {submiting ? <ThreeDot color="#fff" size="medium" /> : "Submit"}
+        </button>
+      </form>
+
+      {/* Social Links */}
+      <div className="flex items-center gap-6">
+        {LINKS.map((Link, index) => (
+          <a
+            key={index}
+            href={Link.link}
+            target="_blank"
+            className="transition-transform duration-400 hover:scale-125"
+          >
+            <img className="w-10 invert" src={Link.icon} alt={Link.name} />
+          </a>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

@@ -85,7 +85,7 @@ app.post('/project', upload.single("image"), async (req, res) => {
 
 app.get('/project', async (req, res) => {
     try {
-        const projects = await projectModel.find()
+        const projects = await projectModel.find({}).sort({ createdAt: -1 })
         res.status(200).json(projects)
     } catch (error) {
         res.status(500).json({ success: false, error: true, message: error.message })

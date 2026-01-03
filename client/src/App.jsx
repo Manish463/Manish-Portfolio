@@ -1,4 +1,3 @@
-import './App.css'
 import { useState, useEffect, useRef } from 'react'
 import { ThemeContext } from './context/context'
 import { useNavigate } from 'react-router-dom'
