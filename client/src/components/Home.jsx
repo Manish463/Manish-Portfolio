@@ -42,15 +42,15 @@ const Home = () => {
           <a
             href="Manish_Resume.pdf"
             target="_blank"
-            className="px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] cursor-pointer duration-200 font-semibold hover:scale-105 active:scale-95"
+            className="px-4 py-2 md:px-6 md:py-3 text-nowrap rounded-md text-white text-center bg-[var(--primColor)] cursor-pointer duration-200 font-semibold hover:scale-105 active:scale-95"
           >
-            Download Resume
+            Resume
           </a>
           <Link
             to="contact"
             smooth={true}
             duration={1000}
-            className="px-4 py-2 md:px-6 md:py-3 rounded-md text-white bg-[var(--primColor)] duration-200 font-semibold hover:scale-105 active:scale-95 cursor-pointer"
+            className="px-4 py-2 md:px-6 md:py-3 text-nowrap rounded-md text-white text-center bg-[var(--primColor)] duration-200 font-semibold hover:scale-105 active:scale-95 cursor-pointer"
           >
             Contact Me
           </Link>

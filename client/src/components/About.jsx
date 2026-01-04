@@ -15,17 +15,21 @@ const About = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          image.current.classList.add("animate-appear");
-          content.current.classList.add("animate-fade-up");
-        }
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const animationClass = entry.target.dataset.animate;
+          entry.target.classList.add(animationClass);
+
+          observer.unobserve(entry.target); // optional: run only once
+        });
       },
-      {
-        threshold: 0.6,
-      }
+      { threshold: 0.4 }
     );
 
-    observer.observe(container.current);
+    // observe elements
+    observer.observe(image.current);
+    observer.observe(content.current);
   });
 
   return (
@@ -41,6 +45,7 @@ const About = (props) => {
       <div className="image flexbox w-full md:w-2/5 p-6">
         <img
           ref={image}
+          data-animate="animate-appear"
           className={`w-50 rounded-full img-shadow opacity-0`}
           src="/images/image.jpg"
           alt="developer-boy"
@@ -51,6 +56,7 @@ const About = (props) => {
       <div className="content vflexbox md:p-8">
         <div
           ref={content}
+          data-animate="animate-fade-up"
           className={`p-8 md:p-16 rounded-2xl vflexbox gap-6 md:gap-10 opacity-0 border-2 shadow-xl ${
             value.theme == "light"
               ? "border-[var(--lightBorder)] bg-gray-200/40"
@@ -63,7 +69,7 @@ const About = (props) => {
             </h2>
             <div className="w-54 h-0.5 bg-gradient-to-r from-transparent via-[var(--primColor)] to-transparent"></div>
           </div>
-          <div className="vflexbox text-md md:text-lg px-6 gap-2 md:gap-4">
+          <div className="vflexbox text-md md:text-lg md:px-6 gap-2 md:gap-4">
             <p>
               I'm Manish Kumar Sharma, a passionate Full Stack Web Developer
               (MERN Stack) who loves turning ideas into functional and

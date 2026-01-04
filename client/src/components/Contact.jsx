@@ -63,11 +63,11 @@ const Contact = () => {
 
       {/* Heading */}
       <div className="text-center space-y-2">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center py-2">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-wide">
             Contact Me
           </h2>
-          <div className="w-60 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
+          <div className="w-54 h-1 bg-gradient-to-r from-transparent via-white to-transparent"></div>
         </div>
         <p className="text-gray-200 text-sm md:text-base max-w-lg px-4">
           Feel free to reach out for collaborations, projects, or just a

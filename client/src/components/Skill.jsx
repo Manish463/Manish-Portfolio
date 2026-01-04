@@ -107,7 +107,7 @@ const Skill = () => {
 
         {/* BACKEND */}
         <div className="w-full">
-          <div className="flex items-center justify-center gap-4 text-xs md:text-sm uppercase tracking-widest text-gray-400">
+          <div className="flex items-center justify-center gap-4 text-xs md:text-sm uppercase tracking-widest text-gray-400 text-nowrap">
             <span className="h-px w-24 bg-gradient-to-r from-transparent via-gray-400/40 to-transparent"></span>
             Backend & Database
             <span className="h-px w-24 bg-gradient-to-r from-transparent via-gray-400/40 to-transparent"></span>
