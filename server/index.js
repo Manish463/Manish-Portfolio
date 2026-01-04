@@ -23,6 +23,9 @@ const EMAIL = process.env.EMAIL
 const PASS = process.env.PASSWORD
 const MONGODB_URI = process.env.MONGODB_URI
 
+//connecting to data base 
+await connectDB();
+
 // declaring middlewares
 app.use(express.json())
 app.use(cors())
@@ -99,7 +102,4 @@ app.get('/project', async (req, res) => {
 // listing on port
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
-
-    //connecting to data base 
-    connectDB();
 })
