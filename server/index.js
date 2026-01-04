@@ -1,17 +1,21 @@
-// modules/packages importing
+// packages importing
 import express from 'express'
 import nodemailer from 'nodemailer'
-import dotenv from 'dotenv/config'
+import 'dotenv/config'
 import cors from 'cors'
+
+// module importing
 import upload from './config/multerconfig.js' // importing multer image uploading function
 import projectModel from './model/project-model.js'
-import connection from './config/mongoose-connection.js'
-import path from 'path'
+import { connectDB } from './config/mongoose-connection.js'
+
 // to use __dirname in ecmascript we have to add this three line of code
+import path from 'path'
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 // initializing variables
 const app = express()
 const port = process.env.PORT
@@ -95,4 +99,7 @@ app.get('/project', async (req, res) => {
 // listing on port
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
+
+    //connecting to data base 
+    connectDB();
 })
